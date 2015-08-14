@@ -1,8 +1,9 @@
 <script>
-  var anchorForId = function (id) {
+  var anchorForId = function (id, headerText) {
     var anchor = document.createElement("a");
-    anchor.className = "header-link";
+    anchor.className = "anchor";
     anchor.href      = "#" + id;
+    anchor.id        = id;
     anchor.innerHTML = "<span class='octicon octicon-link'></span>";
     anchor.title = "Permalink";
     return anchor;
@@ -14,6 +15,8 @@
       var header = headers[h];
 
       if (typeof header.id !== "undefined" && header.id !== "") {
+        var headerText = document.getElementById(header.id).innerHTML;
+        header.innerHTML = '';
         header.appendChild(anchorForId(header.id));
       }
     }

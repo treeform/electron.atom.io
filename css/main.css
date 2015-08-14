@@ -41,6 +41,7 @@ a.no-hover-dec:hover {
 }
 
 pre, code {
+  font-family: "Source Code Pro";
   text-align: left;
 }
 
@@ -55,11 +56,33 @@ code {
   border: none;
 }
 
-.header-link .octicon {
-  margin-left: 10px;
+.docs .octicon-link {
+  display: none;
+  color: #000;
   vertical-align: middle;
 }
 
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+  height: 1em;
+  /*padding-left: 8px;*/
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+h1:hover .octicon-link,
+h2:hover .octicon-link,
+h3:hover .octicon-link,
+h4:hover .octicon-link,
+h5:hover .octicon-link,
+h6:hover .octicon-link {
+  display: inline-block;
+}
 /* Sections
    ------------------------------------------ */
 
@@ -219,8 +242,9 @@ footer {
    ------------------------------------------ */
 
 .docs {
-     background-color: #FAF7F3;
-   }
+  background-color: #fff;
+  color: rgba(12, 46, 58, 0.82);
+}
 
 .docs h1 {
  font-size: 3em;
@@ -252,10 +276,16 @@ footer {
   padding-right: 8px;
 }
 
-.docs code, .docs pree {
-  color: #076274;
+.docs pre code {
+  color: rgba(12, 46, 58, 0.82);
   border: none;
-  background-color: #EAE5DE;
+  background-color: #FAF7F3;
+}
+
+.docs code {
+  color: rgba(12, 46, 58, 0.82);
+  border: none;
+  background-color: #FAF7F3;
 }
 
 .docs blockquote {
@@ -265,4 +295,12 @@ footer {
 
 .all-of-the-latest-documentation h1:first-child {
   padding: 0;
+}
+
+.docs h3 code {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  color: #39AEC6;
+  font-weight: 400;
 }
